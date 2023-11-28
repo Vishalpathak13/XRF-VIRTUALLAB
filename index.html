@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+    <title>XRF!</title>
+</head>
+<body>
+    <!-- <div class="mg card fluid-container mb-2"> -->
+        <div class="navbar">
+        <!-- <div class="header-bar p-2"> -->
+          <h3 class="Instruction" style="color: blue; font-style: italic; display: inline-block; margin-left: 1rem; ">Instructions:</h3>
+          <div id="typer" style="display: inline-block; margin-left: 1rem; font-size: larger; font-weight: bold;"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="box control-box" id="box1">
+            <div id="dialogue-box-parent" style="width: 100vw; height: 100vh; z-index: 999; position: absolute; background-color: rgba(0, 0, 0, 0.8); display: block;">
+                <div class="dialogue-box">
+                    <h2>WELCOME TO THE X-RAY FLUORESCENCE MICROSCOPE SIMULATION</h2>
+                    <h4 style="color: #16b639; font-style: italic">Choose the language for instructions:</h4>
+                    <div style="display: flex;">
+                        <button onclick="englishVoice(this)" style="background-color: green;">ENG</button>
+                        <button onclick="hindiVoice(this)" style="background-color: red;">HIN</button>
+                    </div>
+                </div>
+            </div>
+
+            <h1 class="panel-title">XRF Control Panel</h1>
+            <button id="start-button" class="action-button start">Start XRF</button>
+            <button id="stop-button" class="action-button stop">Stop XRF</button>
+            <p id="status" class="status-text">Status: Idle</p>
+
+            <div class="simulation">
+                <h2 class="simulation-title">Simulation</h2>
+                <button id="simulate-start" class="action-button simulate-start">Simulate Start</button>
+                <button id="simulate-stop" class="action-button simulate-stop">Simulate Stop</button>
+            </div>
+            <!-- <button id="door-open" class="action-button simulate-start">dooropen</button>
+            <button id="door-close" class="action-button simulate-stop">doorclose</button> -->
+
+            <div class="configuration">
+                <label for="simulation-speed" style="color:floralwhite">Simulation Speed</label>
+                <input type="range" id="simulation-speed" min="1" max="5" value="3">
+                <p id="speed-label">Medium</p>
+
+                <label for="sample" style="color:floralwhite">sample</label>
+                 <select id="sample"> 
+                    <option value="element1">Metal</option>
+                    <option value="element2">Alloy</option>
+                    <option value="element3">Ceramic</option>
+                   
+                 </select>
+                
+                
+               
+                <label for="integration-time" style="color:floralwhite">Integration Time (s)</label>
+<input type="number" id="integration-time" min="1" max="5" step="1" value="1">
+
+
+                <button id="start-scan-button" class="action-button start-scan" style="background-color: rgba(3, 39, 112, 0.702); color: white;">Start Scan</button>
+                
+            </div>
+        </div>
+        
+        <div class="box" id="box2">
+             
+        
+                <video controls width="100%" height="auto">
+                    <source src="xrfanm.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+        </div>
+        
+ <div class="box" id="box3">
+            <div id="xrf-image-container" style="display: none;">
+                <img src="xrf graph.png">
+            </div>
+        </div>
+  
+    
+
+    <script src="scripts.js"></script>
+</body>
+</html>
